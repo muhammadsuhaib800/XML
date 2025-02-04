@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet type="text/xsl" herf="Transform.xsl"?>
+<books xmlns:xsi ="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation ="book.xsd">
 
 <books>
     <book>
-        <name>Xml for beginners</name>
+        <book_id>12</book_id>
         <author>Rafay</author>
-        <year>2022</year>
+        <title>XML example</title>
     </book>
     <book>
-        <name>Advance xml</name>
-        <author>Fahad</author>
-        <year>3045</year>
+        <book_id>12</book_id>
+        <author gender ="Male" id=>Rafay</author>
+        <title>XML example</title>
     </book>
     <book>
-        <name>Learn XSLT</name>
-        <author>Suhaib</author>
-        <year>2025</year>
+        <book_id>12</book_id>
+        <author>Rafay</author>
+        <title>XML example</title>
     </book>
 </books>
