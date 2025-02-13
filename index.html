@@ -60,27 +60,83 @@
 
 
 
-    for (let index = 1; index <=10; index++) {
-        console.log(`2 x ${index} = ${ 2 * index}`);
-           }
-
-
-           const day = "Friday";
-
-           if (day ==="Monday") {
-            console.log("First day week");
-           }
-           else if (day ==="Friday") {
-            console.log("Between day week");
-           }
-           else if (day ==="Sunday") {
-            console.log("Holiday day");
-           }
-           else if (day ==="Month") {
-            console.log("It's another day");
-           }
-
+    // for (let index = 1; index <=10; index++) {
+    //     console.log(`2 x ${index} = ${ 2 * index}`);
+    //        }
+            const day = "Monday";
       
+           switch (day) {
+            case "Monday":
+                console.log("its Monday");
+                break;
+                case "Tuesday":
+                console.log("its Tuesday");
+                break;
+                case "Wednesday":
+                console.log("its Wednesday");
+                break;
+           
+            default:
+                console.log("its another day");
+                break;
+           }
+
+           const trafficlight = "Red";
+
+           switch (trafficlight) {
+            case "Red":
+                console.log("stop immidiately");
+                break;
+                case "Yellow":
+                console.log("prepair for start");
+                break;
+                case "Green":
+                console.log("Lets go");
+                break;
+           
+            default:
+                console.log("invalid traffic color");
+                break;
+           }
+
+           const traficlight = "yellow";
+
+                if (traficlight ==="Red") {
+                console.log("Stop immidiately");
+                }
+                else if (traficlight ==="yellow") {
+                console.log("prepair for start");
+                }
+                else if (traficlight ==="Green") {
+                console.log("Lets go");
+                }
+                else if (traficlight ==="blue") {
+                console.log("invalid traffic color");
+                }
+
+
+                const numbers = [10,20,30];
+
+                const [a,c,b] = numbers;
+
+                console.log(a);
+                console.log(b);
+                console.log(c);
+
+                const products = ["product1","product2","product3"]
+
+                const [d,e,f] = products;
+                console.log(d);
+                console.log(e);
+                console.log(f);
+
+                const numberstwo = [1,2,3,4,5,6,7] 
+                const [...restnumber] = numberstwo
+                console.log(restnumber);
+
+                const person = {name:"suhaib", age: 17}
+                const {age }= person;
+                console.log(age);
     </script>
 </body>
 </html>
