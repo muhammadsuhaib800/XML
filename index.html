@@ -186,11 +186,28 @@
         
     }
 
+
     function clearInputs() {
         document.getElementById("name").value = "";
         document.getElementById("age").value = "";
     }
 
+
+    function readRecord() {
+        const person = localStorage.getItem("person");
+        if (person) {
+            const parsedPerson = JSON.parse(person);
+
+        document.getElementById("name").value = parsedPerson.name;
+        document.getElementById("age").value = parsedPerson.age;
+        document.getElementById("result").innerText =
+        `Name: ${parsedPerson.name}, Age: ${parsedPerson.age}`;
+        } 
+        else {
+            document.getElementById("result").innerText = "no record found"
+        }
+        
+    }
     </script>
     
     <h2>Localstorage</h2>
@@ -204,8 +221,8 @@
     <br>
     <br>
     <button  onclick="createRecord()">Create record</button>
-    <!-- <button  onclick="readRecord()">Read record</button>
-    <button  onclick="updateRecord()">Update record</button>
+    <button  onclick="readRecord()">Read record</button>
+    <!-- <button  onclick="updateRecord()">Update record</button>
     <button  onclick="deleteRecord()">Delete record</button> -->
 
     <h3>Reasult:</h3>
