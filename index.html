@@ -91,87 +91,124 @@
     // console.log(myname("karachi"));
     // console.log(myname("lahore"));
     // console.log(myname("multan"));
-    const cars = ["Css","xml","html"]
-    console.log(cars);
+    // const cars = ["Css","xml","html"]
+    // console.log(cars);
 
-    //     console.log(`2 x ${index} = ${ 2 * index}`);
-    //        }
-            const day = "Monday";
+    // //     console.log(`2 x ${index} = ${ 2 * index}`);
+    // //        }
+    //         const day = "Monday";
       
-           switch (day) {
-            case "Monday":
-                console.log("its Monday");
-                break;
-                case "Tuesday":
-                console.log("its Tuesday");
-                break;
-                case "Wednesday":
-                console.log("its Wednesday");
-                break;
+    //        switch (day) {
+    //         case "Monday":
+    //             console.log("its Monday");
+    //             break;
+    //             case "Tuesday":
+    //             console.log("its Tuesday");
+    //             break;
+    //             case "Wednesday":
+    //             console.log("its Wednesday");
+    //             break;
            
-            default:
-                console.log("its another day");
-                break;
-           }
+    //         default:
+    //             console.log("its another day");
+    //             break;
+    //        }
 
-           const trafficlight = "Red";
+    //        const trafficlight = "Red";
 
-           switch (trafficlight) {
-            case "Red":
-                console.log("stop immidiately");
-                break;
-                case "Yellow":
-                console.log("prepair for start");
-                break;
-                case "Green":
-                console.log("Lets go");
-                break;
+    //        switch (trafficlight) {
+    //         case "Red":
+    //             console.log("stop immidiately");
+    //             break;
+    //             case "Yellow":
+    //             console.log("prepair for start");
+    //             break;
+    //             case "Green":
+    //             console.log("Lets go");
+    //             break;
            
-            default:
-                console.log("invalid traffic color");
-                break;
-           }
+    //         default:
+    //             console.log("invalid traffic color");
+    //             break;
+    //        }
 
-           const traficlight = "yellow";
+    //        const traficlight = "yellow";
 
-                if (traficlight ==="Red") {
-                console.log("Stop immidiately");
-                }
-                else if (traficlight ==="yellow") {
-                console.log("prepair for start");
-                }
-                else if (traficlight ==="Green") {
-                console.log("Lets go");
-                }
-                else if (traficlight ==="blue") {
-                console.log("invalid traffic color");
-                }
+    //             if (traficlight ==="Red") {
+    //             console.log("Stop immidiately");
+    //             }
+    //             else if (traficlight ==="yellow") {
+    //             console.log("prepair for start");
+    //             }
+    //             else if (traficlight ==="Green") {
+    //             console.log("Lets go");
+    //             }
+    //             else if (traficlight ==="blue") {
+    //             console.log("invalid traffic color");
+    //             }
 
 
-                const numbers = [10,20,30];
+    //             const numbers = [10,20,30];
 
-                const [a,c,b] = numbers;
+    //             const [a,c,b] = numbers;
 
-                console.log(a);
-                console.log(b);
-                console.log(c);
+    //             console.log(a);
+    //             console.log(b);
+    //             console.log(c);
 
-                const products = ["product1","product2","product3"]
+    //             const products = ["product1","product2","product3"]
 
-                const [d,e,f] = products;
-                console.log(d);
-                console.log(e);
-                console.log(f);
+    //             const [d,e,f] = products;
+    //             console.log(d);
+    //             console.log(e);
+    //             console.log(f);
 
-                const numberstwo = [1,2,3,4,5,6,7] 
-                const [...restnumber] = numberstwo
-                console.log(restnumber);
+    //             const numberstwo = [1,2,3,4,5,6,7] 
+    //             const [...restnumber] = numberstwo
+    //             console.log(restnumber);
 
-                const person = {name:"suhaib", age: 17}
-                const {age }= person;
-                console.log(age);
+    //             const person = {name:"suhaib", age: 17}
+    //             const {age }= person;
+    //             console.log(age)
+
+    function createRecord() {
+        const name = document.getElementById("name").value;
+        const age = document.getElementById("age").value;
+
+        if (name && age) {
+            const person = {name, age};
+            localStorage.setItem("person", JSON.stringify(person));
+            document.getElementById("result").innerText = "created record"
+            clearInputs();
+        } else {
+            document.getElementById("result").innerText = "Please enter both name"
+        }
+        
+    }
+
+    function clearInputs() {
+        document.getElementById("name").value = "";
+        document.getElementById("age").value = "";
+    }
 
     </script>
     
+    <h2>Localstorage</h2>
+    
+    <label for="name">Name :</label>
+    <input type="text" id="name" placeholder="Enter name">
+    <br>
+    <br>
+    <label for="age">age :</label>
+    <input type="number" id="age" placeholder="Enter age">
+    <br>
+    <br>
+    <button  onclick="createRecord()">Create record</button>
+    <!-- <button  onclick="readRecord()">Read record</button>
+    <button  onclick="updateRecord()">Update record</button>
+    <button  onclick="deleteRecord()">Delete record</button> -->
+
+    <h3>Reasult:</h3>
+    <p id="result">Click a button to see a Reasult</p>
 </body>
 </html>
