@@ -208,6 +208,40 @@
         }
         
     }
+
+    function updateRecord() {
+        
+        const person = localStorage.getItem("person")
+        if (person){
+
+        const name = localStorage.getItem("person");
+        const age = localStorage.getItem("person");
+
+        if (name && age) {
+            const updatePerson = {name , age};
+            localStorage.setItem("person",JSON.stringify(updatePerson))
+            document.getElementById("result").innerText = "update record"
+        } 
+        else{
+            document.getElementById("result").innerText = "Please enter both name & age"
+        }
+    } 
+    else {
+            document.getElementById("result").innerText = "No Record Found"
+        }
+        
+    }
+
+    function deleteRecord() {
+        localStorage.removeItem("person");
+        document.getElementById("result").innerText = "Delete Record"
+        clearInputs();
+    }
+
+    function clearInputs() {
+        document.getElementById("name").value = "";
+        document.getElementById("age").value = "";
+    }
     </script>
     
     <h2>Localstorage</h2>
@@ -222,8 +256,8 @@
     <br>
     <button  onclick="createRecord()">Create record</button>
     <button  onclick="readRecord()">Read record</button>
-    <!-- <button  onclick="updateRecord()">Update record</button>
-    <button  onclick="deleteRecord()">Delete record</button> -->
+    <button  onclick="updateRecord()">Update record</button>
+    <button  onclick="deleteRecord()">Delete record</button>
 
     <h3>Reasult:</h3>
     <p id="result">Click a button to see a Reasult</p>
