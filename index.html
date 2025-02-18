@@ -1,250 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Javascript</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            text-align: center;
+        }
+
+        table {
+            width: 50%;
+            margin: auto;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            border: 1px solid black;
+            padding: 10px;
+        }
+
+        .container {
+            margin-top: 20px;
+        }
+    </style>
 </head>
+
 <body>
-    <script>
-        
-    //     let books= "Suhaib"
-    //     books="Rafay"
-        
-
-    //     console.log(books);
-
-    //     var object= "fahad"
-    //     object= "rafay"
-
-    //     console.log(object);
-
-    //     const subject= "math"
-    //     console.log(subject);
-
-    //     let object = { name: "Suhaib" , color: "red"};
-
-    //     // console.log(object.color);
-    //     // console.log(object.name);
-
-    //     document.write(object.name + "<br>" + "<br>");
 
 
-    //     document.write(object.color + "<br>" + "<br>");
-    //     object.color="Blue";
-
-    //     document.write(object.color + "<br>" + "<br>");
-
-    //     var student ={
-    //         "enrol-id":335,
-    //         "name": "suhaib",
-    //         "eligible": true,
-    //         "marks":100,
-    //         "subject": ["JSON" ,"XML", "JAVA"],
-    //         "intro": {"name": "Raf", "location":"Nazimabad"}
-    //     }
-
-    //     console.log(student);
-    //     console.log(student.name);
-    //     console.log(student.subject);
-
-    //     document.write(student.name + "<br>" + "<br>")
-    //     document.write(student.eligible + "<br>" + "<br>")
-    //     document.write(student.subject[1] + "<br>" + "<br>")
-    //     document.write(student.marks + "<br>" + "<br>")
-    //     document.write(student.intro.location + "<br>" + "<br>")
-    //     document.write(student.intro.name + "<br>" + "<br>")
-    //     console.log(student.subject[1]);
-    //     console.log(student.subject[2]);
-    //     console.log(student.subject[0]);
-
-
-
-    // for (let index = 1; index <=10; index++) {
-
-    //     document.write(`2 x ${index} = ${ 2 * index}`+ "<br>" );
-    //        }
-
-    //        let intro= {"name": "Rafay", "location":"Nazimabad", "adress": "karachi"}
-    //     for (xyz in intro) {
-    //         document.write(xyz + ':')
-    //         document.write(intro[xyz] + "<br>"  + "<br>")
-        
-    //     function myclass(){
-    //         console.log("hello");
-    //     }
-    //     myclass();
-
-    //     function saad(){
-    //         return("bobzy the king")
-    //     }
-    //     setTimeout(() => {
-    //         console.log("Aptech")
-    //     },2000);
-    // function myname(Karachi){
-    //     return("Karachi")
-    // }
-    // console.log("anjum")
-    // function myname(name) {
-    //     return `Hello ${name}`
-    // }
-    // console.log(myname("karachi"));
-    // console.log(myname("lahore"));
-    // console.log(myname("multan"));
-    // const cars = ["Css","xml","html"]
-    // console.log(cars);
-
-    // //     console.log(`2 x ${index} = ${ 2 * index}`);
-    // //        }
-    //         const day = "Monday";
-      
-    //        switch (day) {
-    //         case "Monday":
-    //             console.log("its Monday");
-    //             break;
-    //             case "Tuesday":
-    //             console.log("its Tuesday");
-    //             break;
-    //             case "Wednesday":
-    //             console.log("its Wednesday");
-    //             break;
-           
-    //         default:
-    //             console.log("its another day");
-    //             break;
-    //        }
-
-    //        const trafficlight = "Red";
-
-    //        switch (trafficlight) {
-    //         case "Red":
-    //             console.log("stop immidiately");
-    //             break;
-    //             case "Yellow":
-    //             console.log("prepair for start");
-    //             break;
-    //             case "Green":
-    //             console.log("Lets go");
-    //             break;
-           
-    //         default:
-    //             console.log("invalid traffic color");
-    //             break;
-    //        }
-
-    //        const traficlight = "yellow";
-
-    //             if (traficlight ==="Red") {
-    //             console.log("Stop immidiately");
-    //             }
-    //             else if (traficlight ==="yellow") {
-    //             console.log("prepair for start");
-    //             }
-    //             else if (traficlight ==="Green") {
-    //             console.log("Lets go");
-    //             }
-    //             else if (traficlight ==="blue") {
-    //             console.log("invalid traffic color");
-    //             }
-
-
-    //             const numbers = [10,20,30];
-
-    //             const [a,c,b] = numbers;
-
-    //             console.log(a);
-    //             console.log(b);
-    //             console.log(c);
-
-    //             const products = ["product1","product2","product3"]
-
-    //             const [d,e,f] = products;
-    //             console.log(d);
-    //             console.log(e);
-    //             console.log(f);
-
-    //             const numberstwo = [1,2,3,4,5,6,7] 
-    //             const [...restnumber] = numberstwo
-    //             console.log(restnumber);
-
-    //             const person = {name:"suhaib", age: 17}
-    //             const {age }= person;
-    //             console.log(age)
-
-    function createRecord() {
-        const name = document.getElementById("name").value;
-        const age = document.getElementById("age").value;
-
-        if (name && age) {
-            const person = {name, age};
-            localStorage.setItem("person", JSON.stringify(person));
-            document.getElementById("result").innerText = "created record"
-            clearInputs();
-        } else {
-            document.getElementById("result").innerText = "Please enter both name"
-        }
-        
-    }
-
-
-    function clearInputs() {
-        document.getElementById("name").value = "";
-        document.getElementById("age").value = "";
-    }
-
-
-    function readRecord() {
-        const person = localStorage.getItem("person");
-        if (person) {
-            const parsedPerson = JSON.parse(person);
-
-        document.getElementById("name").value = parsedPerson.name;
-        document.getElementById("age").value = parsedPerson.age;
-        document.getElementById("result").innerText =
-        `Name: ${parsedPerson.name}, Age: ${parsedPerson.age}`;
-        } 
-        else {
-            document.getElementById("result").innerText = "No Record Found"
-        }
-        
-    }
-
-    function updateRecord() {
-        
-        const person = localStorage.getItem("person")
-        if (person){
-
-        const name = localStorage.getItem("person");
-        const age = localStorage.getItem("person");
-
-        if (name && age) {
-            const updatePerson = {name , age};
-            localStorage.setItem("person",JSON.stringify(updatePerson));
-            document.getElementById("result").innerText = "update record"
-        } 
-        else{
-            document.getElementById("result").innerText = "Please enter both name & age"
-        }
-    } 
-    else {
-            document.getElementById("result").innerText = "No Record Found"
-        }
-        
-    }
-
-    function deleteRecord() {
-        localStorage.removeItem("person");
-        document.getElementById("result").innerText = "Delete Record"
-        clearInputs();
-    }
-
-    function clearInputs() {
-        document.getElementById("name").value = "";
-        document.getElementById("age").value = "";
-    }
-    </script>
-    
-    <h2>Localstorage</h2>
+    <!-- <h2>Localstorage</h2>
     
     <label for="name">Name :</label>
     <input type="text" id="name" placeholder="Enter name">
@@ -260,6 +48,274 @@
     <button  onclick="deleteRecord()">Delete record</button>
 
     <h3>Reasult:</h3>
-    <p id="result">Click a button to see a Reasult</p>
+    <p id="result">Click a button to see a Reasult</p> -->
+
+    <h2>Student Marksheet</h2>
+    <div class="container">
+        <label>Student Name: <input type="text" id="student_name"></label><br><br>
+        <label>Math <input type="number" id="math"></label><br><br>
+        <label>Science <input type="number" id="science"></label><br><br>
+        <label>English <input type="number" id="english"></label><br><br>
+
+        <button onclick="savedata()">Save Marksheet</button>
+        <button onclick="displaydata()">Show Marksheet</button>
+        <button onclick="cleardata()">clear Marksheet</button>
+    </div>
+
+
+    <script>
+
+        //     let books= "Suhaib"
+        //     books="Rafay"
+
+
+        //     console.log(books);
+
+        //     var object= "fahad"
+        //     object= "rafay"
+
+        //     console.log(object);
+
+        //     const subject= "math"
+        //     console.log(subject);
+
+        //     let object = { name: "Suhaib" , color: "red"};
+
+        //     // console.log(object.color);
+        //     // console.log(object.name);
+
+        //     document.write(object.name + "<br>" + "<br>");
+
+
+        //     document.write(object.color + "<br>" + "<br>");
+        //     object.color="Blue";
+
+        //     document.write(object.color + "<br>" + "<br>");
+
+        //     var student ={
+        //         "enrol-id":335,
+        //         "name": "suhaib",
+        //         "eligible": true,
+        //         "marks":100,
+        //         "subject": ["JSON" ,"XML", "JAVA"],
+        //         "intro": {"name": "Raf", "location":"Nazimabad"}
+        //     }
+
+        //     console.log(student);
+        //     console.log(student.name);
+        //     console.log(student.subject);
+
+        //     document.write(student.name + "<br>" + "<br>")
+        //     document.write(student.eligible + "<br>" + "<br>")
+        //     document.write(student.subject[1] + "<br>" + "<br>")
+        //     document.write(student.marks + "<br>" + "<br>")
+        //     document.write(student.intro.location + "<br>" + "<br>")
+        //     document.write(student.intro.name + "<br>" + "<br>")
+        //     console.log(student.subject[1]);
+        //     console.log(student.subject[2]);
+        //     console.log(student.subject[0]);
+
+
+
+        // for (let index = 1; index <=10; index++) {
+
+        //     document.write(`2 x ${index} = ${ 2 * index}`+ "<br>" );
+        //        }
+
+        //        let intro= {"name": "Rafay", "location":"Nazimabad", "adress": "karachi"}
+        //     for (xyz in intro) {
+        //         document.write(xyz + ':')
+        //         document.write(intro[xyz] + "<br>"  + "<br>")
+
+        //     function myclass(){
+        //         console.log("hello");
+        //     }
+        //     myclass();
+
+        //     function saad(){
+        //         return("bobzy the king")
+        //     }
+        //     setTimeout(() => {
+        //         console.log("Aptech")
+        //     },2000);
+        // function myname(Karachi){
+        //     return("Karachi")
+        // }
+        // console.log("anjum")
+        // function myname(name) {
+        //     return `Hello ${name}`
+        // }
+        // console.log(myname("karachi"));
+        // console.log(myname("lahore"));
+        // console.log(myname("multan"));
+        // const cars = ["Css","xml","html"]
+        // console.log(cars);
+
+        // //     console.log(`2 x ${index} = ${ 2 * index}`);
+        // //        }
+        //         const day = "Monday";
+
+        //        switch (day) {
+        //         case "Monday":
+        //             console.log("its Monday");
+        //             break;
+        //             case "Tuesday":
+        //             console.log("its Tuesday");
+        //             break;
+        //             case "Wednesday":
+        //             console.log("its Wednesday");
+        //             break;
+
+        //         default:
+        //             console.log("its another day");
+        //             break;
+        //        }
+
+        //        const trafficlight = "Red";
+
+        //        switch (trafficlight) {
+        //         case "Red":
+        //             console.log("stop immidiately");
+        //             break;
+        //             case "Yellow":
+        //             console.log("prepair for start");
+        //             break;
+        //             case "Green":
+        //             console.log("Lets go");
+        //             break;
+
+        //         default:
+        //             console.log("invalid traffic color");
+        //             break;
+        //        }
+
+        //        const traficlight = "yellow";
+
+        //             if (traficlight ==="Red") {
+        //             console.log("Stop immidiately");
+        //             }
+        //             else if (traficlight ==="yellow") {
+        //             console.log("prepair for start");
+        //             }
+        //             else if (traficlight ==="Green") {
+        //             console.log("Lets go");
+        //             }
+        //             else if (traficlight ==="blue") {
+        //             console.log("invalid traffic color");
+        //             }
+
+
+        //             const numbers = [10,20,30];
+
+        //             const [a,c,b] = numbers;
+
+        //             console.log(a);
+        //             console.log(b);
+        //             console.log(c);
+
+        //             const products = ["product1","product2","product3"]
+
+        //             const [d,e,f] = products;
+        //             console.log(d);
+        //             console.log(e);
+        //             console.log(f);
+
+        //             const numberstwo = [1,2,3,4,5,6,7] 
+        //             const [...restnumber] = numberstwo
+        //             console.log(restnumber);
+
+        //             const person = {name:"suhaib", age: 17}
+        //             const {age }= person;
+        //             console.log(age)
+
+        // function createRecord() {
+        //     const name = document.getElementById("name").value;
+        //     const age = document.getElementById("age").value;
+
+        //     if (name && age) {
+        //         const person = {name, age};
+        //         localStorage.setItem("person", JSON.stringify(person));
+        //         document.getElementById("result").innerText = "created record"
+        //         clearInputs();
+        //     } else {
+        //         document.getElementById("result").innerText = "Please enter both name"
+        //     }
+
+        // }
+
+
+        // function clearInputs() {
+        //     document.getElementById("name").value = "";
+        //     document.getElementById("age").value = "";
+        // }
+
+
+        // function readRecord() {
+        //     const person = localStorage.getItem("person");
+        //     if (person) {
+        //         const parsedPerson = JSON.parse(person);
+
+        //     document.getElementById("name").value = parsedPerson.name;
+        //     document.getElementById("age").value = parsedPerson.age;
+        //     document.getElementById("result").innerText =
+        //     `Name: ${parsedPerson.name}, Age: ${parsedPerson.age}`;
+        //     } 
+        //     else {
+        //         document.getElementById("result").innerText = "No Record Found"
+        //     }
+
+        // }
+
+        // function updateRecord() {
+
+        //     const person = localStorage.getItem("person")
+        //     if (person){
+
+        //     const name = localStorage.getItem("person");
+        //     const age = localStorage.getItem("person");
+
+        //     if (name && age) {
+        //         const updatePerson = {name , age};
+        //         localStorage.setItem("person",JSON.stringify(updatePerson));
+        //         document.getElementById("result").innerText = "update record"
+        //     } 
+        //     else{
+        //         document.getElementById("result").innerText = "Please enter both name & age"
+        //     }
+        // } 
+        // else {
+        //         document.getElementById("result").innerText = "No Record Found"
+        //     }
+
+        // }
+
+        // function deleteRecord() {
+        //     localStorage.removeItem("person");
+        //     document.getElementById("result").innerText = "Delete Record"
+        //     clearInputs();
+        // }
+
+        // function clearInputs() {
+        //     document.getElementById("name").value = "";
+        //     document.getElementById("age").value = "";
+        // }
+
+        function savedata() {
+            let studentname = document.getElementById('student_name');
+            let math = document.getElementById('math').value;
+            let science = document.getElementById('science').value;
+            let english = document.getElementById('english').value;
+
+            if (!studentname || !math || !science || !english) {
+                alert("Please fill the number");
+                return;
+            }
+
+            let studentData = { studentname, math, science, english }
+            sessionStorage.setItem("marksheet", JSON.stringify(studentData));
+            alert("Marksheet save Sucessfully");
+        }
+    </script>
 </body>
+
 </html>
