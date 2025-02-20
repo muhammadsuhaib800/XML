@@ -60,6 +60,9 @@
         <button onclick="savedata()">Save Marksheet</button>
         <button onclick="displaydata()">Show Marksheet</button>
         <button onclick="cleardata()">clear Marksheet</button>
+        <div id ="marksheet">
+
+        </div>
     </div>
 
 
@@ -294,14 +297,8 @@
         //     document.getElementById("result").innerText = "Delete Record"
         //     clearInputs();
         // }
-
-        // function clearInputs() {
-        //     document.getElementById("name").value = "";
-        //     document.getElementById("age").value = "";
-        // }
-
         function savedata() {
-            let studentname = document.getElementById('student_name');
+            let studentname = document.getElementById('studentname');
             let math = document.getElementById('math').value;
             let science = document.getElementById('science').value;
             let english = document.getElementById('english').value;
@@ -317,9 +314,9 @@
         }
 
         function displaydata() {
-            let data = sessionStorage.getItem("marksheeet")
+            let data = sessionStorage.getItem("marksheet");
             if (!data) {
-                document.getElementById("marksheet").innerHTML = "<p>No Marksheet Found.</p>"
+                document.getElementById("marksheet").innerHTML="<p>No marksheet Found.</p>"
                 return;
             }
 
@@ -327,7 +324,26 @@
             let total = Number(math) + Number(science) + Number(english);
             let percentage = (total / 300 * 100).toFixed(2);
 
-            document.getElementById("marksheet").innerHTML = 
+            document.getElementById("marksheet").innerHTML = `
+            <h3>marksheet</h3>
+            <table>
+                <tr><th>Name</th><td>${studentname}</td></tr>
+                <tr><th>math</th><td>${math}</td></tr>
+                <tr><th>science</th><td>${science}</td></tr>
+                <tr><th>english</th><td>${english}</td></tr>
+                <tr><th>total</th><td>${total}/300</td></tr>
+                <tr><th>percentage</th><td>${percentage}%</td></tr>
+            </table>`;    
+        }
+
+        function cleardata() {
+            sessionStorage.removeItem("marksheet");
+            document.getElementById("marksheet");
+            document.getElementById("studentname").value="";
+            document.getElementById("math").value = "";
+            document.getElementById("science").value = "";
+            document.getElementById("english").value = "";
+            alert("Cleared marksheet")
         }
     </script>
 </body>
