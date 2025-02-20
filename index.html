@@ -315,6 +315,20 @@
             sessionStorage.setItem("marksheet", JSON.stringify(studentData));
             alert("Marksheet save Sucessfully");
         }
+
+        function displaydata() {
+            let data = sessionStorage.getItem("marksheeet")
+            if (!data) {
+                document.getElementById("marksheet").innerHTML = "<p>No Marksheet Found.</p>"
+                return;
+            }
+
+            let {studentname,math,science,english}=JSON.parse(data);
+            let total = Number(math) + Number(science) + Number(english);
+            let percentage = (total / 300 * 100).toFixed(2);
+
+            document.getElementById("marksheet").innerHTML = 
+        }
     </script>
 </body>
 
