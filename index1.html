@@ -6,7 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-    <h2>Student Marksheet</h2>
+    <!-- <h2>Student Marksheet</h2>
     <div class="container">
         <label>Student Name: <input type="text" id="student_name"></label><br><br>
         <label>Math <input type="number" id="math"></label><br><br>
@@ -19,62 +19,95 @@
         <div id ="marksheet">
 
         </div>
-    </div>
+    </div> -->
+
+
     <script>
-        let studentname = {name:"suhaib", age: 17};
+//         let studentname = {name:"suhaib", age: 17};
 
-function savedata() {
-    let studentNameInput = document.getElementById('studentname').value; // Fetch the student's name input value
-    let math = document.getElementById('math').value;
-    let science = document.getElementById('science').value;
-    let english = document.getElementById('english').value;
+// function savedata() {
+//     let studentNameInput = document.getElementById('studentname').value; // Fetch the student's name input value
+//     let math = document.getElementById('math').value;
+//     let science = document.getElementById('science').value;
+//     let english = document.getElementById('english').value;
 
-    if (!studentNameInput || !math || !science || !english) {
-        alert("Please fill the number");
-        return;
-    }
+//     if (!studentNameInput || !math || !science || !english) {
+//         alert("Please fill the number");
+//         return;
+//     }
 
-    let studentData = { studentname: studentNameInput, math, science, english }
-    sessionStorage.setItem("marksheet", JSON.stringify(studentData));
-    alert("Marksheet saved successfully");
-}
+//     let studentData = { studentname: studentNameInput, math, science, english }
+//     sessionStorage.setItem("marksheet", JSON.stringify(studentData));
+//     alert("Marksheet saved successfully");
+// }
 
-function displaydata() {
-    let data = sessionStorage.getItem("marksheet");
+// function displaydata() {
+//     let data = sessionStorage.getItem("marksheet");
     
-    if (!data) {
-        document.getElementById("marksheet").innerHTML = "<p>No marksheet found.</p>";
-        return;
-    }
+//     if (!data) {
+//         document.getElementById("marksheet").innerHTML = "<p>No marksheet found.</p>";
+//         return;
+//     }
 
-    let { studentname, math, science, english } = JSON.parse(data);
-    let total = Number(math) + Number(science) + Number(english);
-    let percentage = ((total / 300) * 100).toFixed(2);
+//     let { studentname, math, science, english } = JSON.parse(data);
+//     let total = Number(math) + Number(science) + Number(english);
+//     let percentage = ((total / 300) * 100).toFixed(2);
 
-    document.getElementById("marksheet").innerHTML = `
-        <h3>Marksheet</h3>
-        <table>
-            <tr><th>Name</th><td>${studentname}</td></tr>
-            <tr><th>Math</th><td>${math}</td></tr>
-            <tr><th>Science</th><td>${science}</td></tr>
-            <tr><th>English</th><td>${english}</td></tr>
-            <tr><th>Total</th><td>${total}/300</td></tr>
-            <tr><th>Percentage</th><td>${percentage}%</td></tr>
-        </table>`;
-}
+//     document.getElementById("marksheet").innerHTML = `
+//         <h3>Marksheet</h3>
+//         <table>
+//             <tr><th>Name</th><td>${studentname}</td></tr>
+//             <tr><th>Math</th><td>${math}</td></tr>
+//             <tr><th>Science</th><td>${science}</td></tr>
+//             <tr><th>English</th><td>${english}</td></tr>
+//             <tr><th>Total</th><td>${total}/300</td></tr>
+//             <tr><th>Percentage</th><td>${percentage}%</td></tr>
+//         </table>`;
+// }
 
-function cleardata() {
-    sessionStorage.removeItem("marksheet");
+// function cleardata() {
+//     sessionStorage.removeItem("marksheet");
     
-    document.getElementById("marksheet").innerHTML = "";
+//     document.getElementById("marksheet").innerHTML = "";
     
-    document.getElementById("studentname").value = "";
-    document.getElementById("math").value = "";
-    document.getElementById("science").value = "";
-    document.getElementById("english").value = "";
+//     document.getElementById("studentname").value = "";
+//     document.getElementById("math").value = "";
+//     document.getElementById("science").value = "";
+//     document.getElementById("english").value = "";
 
-    alert("Cleared marksheet");
-}
+//     alert("Cleared marksheet");
+// }
+
+            // let b = Math.ceil(60.8957 * 100) / 100; 
+            // let c = Math.floor(7.9);
+            // console.log(b);
+
+            // let name1 = ["Suhaib","Rafay","Fahad"];
+            // let name2 = ["Kashan","Shaiz","Hassan"]
+
+            // // name.unshift("Shaiz");
+            // // console.log(name);
+            
+            // const user = ["zain","ali","shaiz","suhaib","fahad"];
+            // user.splice(0,2);
+            //  console.log(user);
+
+
+            const student = {
+        personalInfo: {
+            name: "Suhaib",
+            age: 16
+        },
+        Info: {
+            class: "10th Grade",
+            batch: "A1"
+  }
+};
+
+console.log(student.personalInfo.name);  
+console.log(student.personalInfo.age);   
+console.log(student.academicInfo.class); 
+console.log(student.academicInfo.batch); 
 
 
     </script>
